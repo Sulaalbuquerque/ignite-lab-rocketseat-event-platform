@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="public/assets/Wallpaper - 2560x1080.png"/>
+    <img src="assets/Wallpaper - 2560x1080.png"/>
 </h1>
 
 <h2 align="center">Ignite Lab</h2>
