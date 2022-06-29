@@ -4,7 +4,6 @@ import ptBR from 'date-fns/locale/pt-BR'
 import { Link, useParams } from 'react-router-dom'
 import classNames from 'classnames'
 
-
 interface LessonProps {
     title: string;
     slug: string;
