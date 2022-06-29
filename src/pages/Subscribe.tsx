@@ -37,8 +37,8 @@ export function Subscribe() {
                     </div>
                     <h1 className="text-center mt-9 mb-9 text-[1.5rem] leading-tight lg:text-start">
                         Construa uma 
-                        <strong className="text-blue-500"> aplicação completa </strong>
-                        , do zero, com 
+                        <strong className="text-blue-500"> aplicação completa, </strong>
+                        do zero, com 
                         <strong className="text-blue-500"> React.</strong>
                     </h1>
                     <p className="text-center mt-4 text-gray-200 leading-relaxed lg:text-start">
