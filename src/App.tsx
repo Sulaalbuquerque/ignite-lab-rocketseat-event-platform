@@ -4,13 +4,17 @@ import { client } from './lib/apollo'
 import { Event } from "./pages/Event"
 import { Router } from "./Router"
 
+import { MenuMobileIsVisibleContextProvider } from './contexts/menuMobileIsVisibleContext'
+
 function App() {
 
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Router/>
-      </BrowserRouter>
+      <MenuMobileIsVisibleContextProvider>
+        <BrowserRouter>
+          <Router/>
+        </BrowserRouter>
+      </MenuMobileIsVisibleContextProvider>
     </ApolloProvider>
   )
 }

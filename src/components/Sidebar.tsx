@@ -1,9 +1,15 @@
 import { Lesson } from "./Lesson";
 import { useGetLessonsQuery } from "../graphql/generated";
+import { useState, useContext } from "react";
+import { MenuMobileIsVisibleContext } from "../contexts/menuMobileIsVisibleContext";
 
 export function Sidebar() {
 
     const { data } = useGetLessonsQuery()
+
+    //const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
+
+    //console.log(menuMobileIsVisible)
 
     return (
         <aside className="hidden w-[480px] bg-gray-700 p-6 border-l border-gray-600 lg:block">
