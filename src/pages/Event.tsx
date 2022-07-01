@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 import { Video } from "../components/Video";
+import { Footer } from '../components/Footer'
 
 export function Event() {
 
@@ -11,13 +12,16 @@ export function Event() {
         <div className="flex flex-col min-h-screen">
             <Header/>
             <main className="flex flex-1">
-                { 
-                    slug 
-                    ? <Video lessonSlug={slug}/> 
-                    : <div className="flex-1"></div>
-                }
+                <div>
+                    { 
+                        slug 
+                        ? <Video lessonSlug={slug}/> 
+                        : <div className="flex-1 h-full w-full"></div>
+                    }
+                    <Footer/>
+                </div>
                 <Sidebar/>
-            </main>
+            </main> 
         </div>
     )
 }

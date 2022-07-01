@@ -36,7 +36,7 @@ export function Video(props: VideoProps) {
             </div>
 
             <div className="p-8 max-w-[1100px] mx-auto">
-                <div className="flex items-start gap-16">
+                <div className="flex flex-col lg:items-start lg:flex-row gap-16">
                     <div className="flex-1">
                         <h1 className="text-2xl font-bold">
                             {data.lesson.title}
@@ -74,8 +74,8 @@ export function Video(props: VideoProps) {
                     </div>
                 </div>
 
-                <div className="gap-8 mt-20 grid grid-cols-2">
-                    <a href="#" className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
+                <div className="gap-8 mt-20 grid grid-cols-1 lg:grid-cols-2">
+                    <a href="#" className="bg-gray-700 rounded overflow-hidden flex items-stretch justify-between gap-6 hover:bg-gray-600 transition-colors">
                         <div className="bg-green-700 h-full p-6 flex items-center">
                             <FileArrowDown size={40}/>
                         </div>
@@ -92,13 +92,13 @@ export function Video(props: VideoProps) {
                         </div>
                     </a>
 
-                    <a href="#" className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors">
+                    <a href="#" className="bg-gray-700 rounded overflow-hidden flex items-stretch justify-between gap-6 hover:bg-gray-600 transition-colors">
                         <div className="bg-green-700 h-full p-6 flex items-center">
                             <FileArrowDown size={40}/>
                         </div>
                         
                         <div className="py-6 leading-relaxed">
-                            <strong className="text-2xl">wallpapers exclusivos</strong>
+                            <strong className="text-2xl">Wallpapers exclusivos</strong>
                             <p className="text-sm text-gray-200 mt-2">
                                 Baixe wallpapers exclusivos do Ignite Lab e personalize a sua máquina 
                             </p>
