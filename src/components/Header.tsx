@@ -1,13 +1,20 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { Logo } from "./Logo";
 import iconMenu from '../assets/menu.png'
 import iconClose from '../assets/close.png'
 
 import { MenuMobileIsVisibleContext } from '../contexts/menuMobileIsVisibleContext'
 
+interface PropsHeader {
+    menuMobileIsVisible: boolean,
+    setMenuMobileIsVisible: React.ReactNode,
+}
+
 export function Header() {
 
-    //const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
+    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext<PropsHeader>(MenuMobileIsVisibleContext)
+    
+    console.log(menuMobileIsVisible)
 
     return (
         <div>
@@ -16,12 +23,12 @@ export function Header() {
                 <div className="flex gap-3 items-center lg:hidden">
                     <p>Aulas</p>
                     <img 
-                        //onClick={() => setMenuMobileIsVisible(true)} 
+                        onClick={() => setMenuMobileIsVisible(true)} 
                         className="cursor-pointer"
                         src={iconMenu} 
                     />
                     <img 
-                        //onClick={() => setMenuMobileIsVisible(false)} 
+                        onClick={() => setMenuMobileIsVisible(false)} 
                         className="hidden cursor-pointer" 
                         src={iconClose} 
                     />

@@ -8,8 +8,6 @@ export function Event() {
 
     const { slug } = useParams<{ slug: string }>()
 
-    console.log(slug)
-
     return (
         <div className="flex flex-col min-h-screen">
             <Header/>
@@ -18,7 +16,7 @@ export function Event() {
                     { 
                         slug 
                         ? <Video lessonSlug={slug}/> 
-                        : <div className="flex-1 h-full w-full"></div>
+                        : <div className="flex-1 h-full w-full "></div>
                     }
                     <Footer/>
                 </div>

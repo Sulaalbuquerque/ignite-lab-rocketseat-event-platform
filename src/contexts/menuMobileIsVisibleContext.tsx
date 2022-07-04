@@ -1,11 +1,20 @@
-import { createContext, useState} from "react";
+import { createContext, ReactNode, useState} from "react";
 
-export const MenuMobileIsVisibleContext = createContext();
+interface AppContextInterface {
+  menuMobileIsVsible: boolean,
+  setMenuMobileIsVisible: React.ReactNode
+}
 
-export const MenuMobileIsVisibleContextProvider = ({ children }) => {
+export const MenuMobileIsVisibleContext = createContext<AppContextInterface | null>(null);
+
+interface PropsMenuMobileIsVisibleContextProvider {
+  children: React.ReactNode
+}
+
+export const MenuMobileIsVisibleContextProvider = ({ children }: PropsMenuMobileIsVisibleContextProvider) => {
 
     const [menuMobileIsVsible, setMenuMobileIsVisible] = useState(false)
-  
+    console.log(menuMobileIsVsible)
   return (
     <>
       <MenuMobileIsVisibleContext.Provider value={{ menuMobileIsVsible, setMenuMobileIsVisible }}>
