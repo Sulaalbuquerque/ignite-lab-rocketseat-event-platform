@@ -1,12 +1,7 @@
 import { Lesson } from "./Lesson";
 import { useGetLessonsQuery } from "../graphql/generated";
-import { useState, useContext, useRef, ReactNode } from "react";
+import { useContext, useRef } from "react";
 import { MenuMobileIsVisibleContext } from "../contexts/menuMobileIsVisibleContext";
-
-interface PropsSidebar {
-    menuMobileIsVisible: boolean,
-    setMenuMobileIsVisible: ReactNode,
-}
 
 export function Sidebar() {
 
@@ -14,12 +9,10 @@ export function Sidebar() {
 
     const { data } = useGetLessonsQuery()
 
-    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext<PropsSidebar>(MenuMobileIsVisibleContext)
+    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
 
-    console.log(menuMobileIsVisible)
-
-    if (menuMobileIsVisible){
-        console.log('go')
+    if(menuMobileIsVisible){
+        aside.current.classList.add = 'block'
     }
 
     return (

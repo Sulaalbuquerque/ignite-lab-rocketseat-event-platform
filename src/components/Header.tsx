@@ -1,21 +1,14 @@
-import { useState, useContext, useRef } from "react";
+import { useContext } from "react";
 import { Logo } from "./Logo";
 import iconMenu from '../assets/menu.png'
 import iconClose from '../assets/close.png'
 
 import { MenuMobileIsVisibleContext } from '../contexts/menuMobileIsVisibleContext'
 
-interface PropsHeader {
-    menuMobileIsVisible: boolean,
-    setMenuMobileIsVisible: React.ReactNode,
-}
-
 export function Header() {
 
-    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext<PropsHeader>(MenuMobileIsVisibleContext)
+    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
     
-    console.log(menuMobileIsVisible)
-
     return (
         <div>
             <header className="w-full p-5 flex gap-5 items-center justify-between bg-gray-700 border-b border-gray-600 lg:justify-center">
