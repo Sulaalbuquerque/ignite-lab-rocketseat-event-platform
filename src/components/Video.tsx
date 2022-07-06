@@ -1,8 +1,7 @@
 import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
-import { useContext, useRef, useEffect } from "react";
+import { useContext } from "react";
 import { MenuMobileIsVisibleContext } from "../contexts/menuMobileIsVisibleContext";
-
 import '@vime/core/themes/default.css'
 import { useGetLessonBySlugQuery } from "../graphql/generated";
 
@@ -11,8 +10,6 @@ interface VideoProps {
 }
 
 export function Video(props: VideoProps) {
-
-    const videoRef = useRef(null)
 
     const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
 
@@ -31,7 +28,7 @@ export function Video(props: VideoProps) {
     }
 
     return (
-        <div ref={videoRef} className="flex-1 ">
+        <div className={menuMobileIsVisible ? 'hidden flex-1' : 'visible flex-1'}>
             <div className="bg-black flex justify-center">
                 <div className="h-full w-full max-w-[1100px] max-h-[68vh] aspect-video">
                     <Player>
