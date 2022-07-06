@@ -11,7 +11,7 @@ interface VideoProps {
 
 export function Video(props: VideoProps) {
 
-    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
+    const { menuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
 
     const { data } =  useGetLessonBySlugQuery({
         variables: {
@@ -21,16 +21,14 @@ export function Video(props: VideoProps) {
 
     if (!data || !data.lesson) {
         return (
-            <div className="flex-1">
-                <p>Carregando...</p>
-            </div>
+            <div className="flex-1 w-full"></div>
         )
     }
 
     return (
         <div className={menuMobileIsVisible ? 'hidden flex-1' : 'visible flex-1'}>
             <div className="bg-black flex justify-center">
-                <div className="h-full w-full max-w-[1100px] max-h-[68vh] aspect-video">
+                <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
                     <Player>
                         <Youtube videoId={data.lesson.videoId}  key={data.lesson.videoId}/>
                         <DefaultUi/>

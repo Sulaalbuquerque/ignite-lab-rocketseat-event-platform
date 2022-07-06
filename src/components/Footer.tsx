@@ -4,12 +4,12 @@ import { MenuMobileIsVisibleContext } from "../contexts/menuMobileIsVisibleConte
 
 export function Footer() {
 
-    const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
+    const { menuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
 
     return (
         <footer className={menuMobileIsVisible 
-                           ? 'hidden bg-black w-full flex-col p-5 gap-4 lg:flex-row lg:justify-between' 
-                           : 'bg-black w-full flex flex-col p-5 gap-4 lg:flex-row lg:justify-between'}
+                           ? 'hidden bg-black w-full flex-col p-5 gap-4 lg:w-full lg:flex-row lg:justify-between' 
+                           : 'bg-black w-full flex flex-col p-5 gap-4 lg:w-full lg:flex-row lg:justify-between'}
         >
             <div className="flex flex-col gap-3 lg:flex-row lg:gap-5 lg:items-center">
                 <div className="flex justify-center">
