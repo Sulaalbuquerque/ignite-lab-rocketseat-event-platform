@@ -9,6 +9,6 @@
 
 ##### A aplicação trata-se de uma plataforma de eventos que utiliza **ReactJS**, **Vite** e **TailwindCSS** para a sua estrutura de base frontend. Assim como **GraphCMS**, criando as entidades da aplicação e integrando a API GraphQL gerada pela plataforma no front-end utilizando Apollo Client.
 
-##### Como adicionais ao projeto, adicionei um footer e responsividade às páginas, de acordo o layout no **figma** disponibilizado.
+##### Como adicionais ao projeto, acrescentei responsividade e um footer às páginas, de acordo o layout no **figma** disponibilizado.
 
 #### Acesse aplicação online pelo <a href="https://ignite-lab-rocketseat-event-platform.vercel.app/">link</a>.
