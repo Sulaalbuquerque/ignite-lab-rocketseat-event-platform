@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Logo } from "./Logo";
 import iconMenu from '../assets/menu.png'
 import iconClose from '../assets/close.png'
@@ -8,6 +8,21 @@ import { MenuMobileIsVisibleContext } from '../contexts/menuMobileIsVisibleConte
 export function Header() {
 
     const { menuMobileIsVisible, setMenuMobileIsVisible } = useContext(MenuMobileIsVisibleContext)
+
+    const menuOpenRef = useRef(null)
+    const menuCloseRef = useRef(null)
+
+    useEffect(() => {
+        if (menuMobileIsVisible){
+            menuCloseRef.current.classList.remove('hidden')
+            menuOpenRef.current.classList.add('hidden')
+        } else {
+            menuCloseRef.current.classList.add('hidden')
+            menuOpenRef.current.classList.remove('hidden')
+        }
+    
+        
+    }, [menuMobileIsVisible])
     
     return (
         <div>
@@ -16,11 +31,13 @@ export function Header() {
                 <div className="flex gap-3 items-center lg:hidden">
                     <p>Aulas</p>
                     <img 
+                        ref={menuOpenRef}
                         onClick={() => setMenuMobileIsVisible(true)} 
                         className="cursor-pointer"
                         src={iconMenu} 
                     />
                     <img 
+                        ref={menuCloseRef}
                         onClick={() => setMenuMobileIsVisible(false)} 
                         className="hidden cursor-pointer" 
                         src={iconClose} 
